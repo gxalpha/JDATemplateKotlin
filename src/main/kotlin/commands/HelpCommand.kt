@@ -35,8 +35,8 @@ object HelpCommand : Command {
                     event.channel.sendMessage(
                         BotHelper.getDefaultEmbedBuilder(
                             title = "Usage for `${Static.COMMAND_PREFIX}$key`",
-                            footer = if (!allowed(args, event)) {
-                                "You are don't have the rights to use this command on the current server."
+                            footer = if (!command.allowed(args, event)) {
+                                "You don't have the rights to use this command on the current server."
                             } else {
                                 null
                             }
