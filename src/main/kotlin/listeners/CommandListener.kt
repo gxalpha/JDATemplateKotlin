@@ -13,8 +13,7 @@ class CommandListener : EventListener {
 
             if (event.message.contentRaw.toLowerCase().startsWith(Static.COMMAND_PREFIX)) {
                 CommandHandler.handleCommand(
-                    container = CommandHandler.parseMessage(event.message.contentRaw, event),
-                    event = event
+                    container = CommandHandler.parseMessage(event.message.contentRaw, event)
                 )
             }
         }

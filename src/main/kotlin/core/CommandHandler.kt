@@ -13,7 +13,7 @@ object CommandHandler {
     )
 
     @Suppress("MapGetWithNotNullAssertionOperator")
-    fun handleCommand(container: CommandContainer, event: MessageReceivedEvent) {
+    fun handleCommand(container: CommandContainer) {
         if (commands.containsKey(container.invoke)) {
             val allowed = commands[container.invoke]!!.allowed(
                 container.args,
@@ -26,7 +26,7 @@ object CommandHandler {
             }
             commands[container.invoke]!!.executed(allowed, container.event)
         } else {
-            event.channel.sendMessage(
+            container.event.channel.sendMessage(
                 BotHelper.getDefaultEmbedBuilder(
                     title = "Error",
                     description = "Command **${container.invoke}** can't be found."
