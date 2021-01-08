@@ -22,7 +22,7 @@ fun main() {
     val jda = JDABuilder.createDefault(Static.DISCORD_TOKEN)
         .setActivity(Activity.playing(Static.BOT_GAME_PLAYING))
         .setAutoReconnect(true)
-        .addEventListeners(ReadyListener(), CommandListener())
+        .addEventListeners(ReadyListener, CommandListener)
         .build()
     try {
         jda.awaitReady()

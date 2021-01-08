@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.hooks.EventListener
 import util.Static
 
-class CommandListener : EventListener {
+object CommandListener : EventListener {
     override fun onEvent(event: GenericEvent) {
 
         if (event is MessageReceivedEvent && !event.author.isBot) { //alternatively second part as "event.author.id != event.jda.selfUser.id" if bots should be able to use commands
