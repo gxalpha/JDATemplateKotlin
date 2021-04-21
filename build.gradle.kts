@@ -14,11 +14,15 @@ buildConfig {
 
 repositories {
     mavenCentral()
+    maven {
+        name = "m2-dv8tion"
+        url = uri("https://m2.dv8tion.net/releases")
+    }
     jcenter()
 }
 dependencies {
     testImplementation(kotlin("test-junit"))
-    implementation("net.dv8tion:JDA:4.2.0_214")
+    implementation("net.dv8tion:JDA:4.2.1_259")
 }
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
