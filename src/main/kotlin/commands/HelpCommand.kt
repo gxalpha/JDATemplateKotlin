@@ -1,11 +1,10 @@
 package commands
 
-// TODO Generate and import Build Config, should look a little like this:
-import JDATemplateKotlin.BuildConfig
 import core.BotHelper
 import core.CommandHandler
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import util.Static
+import util.BuildConfig
 
 object HelpCommand : Command {
 

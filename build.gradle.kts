@@ -9,6 +9,7 @@ val version = "1.0-SNAPSHOT"
 
 /* execute "./gradlew generateBuildConfig" */
 buildConfig {
+    packageName("util")
     buildConfigField("String", "VERSION", "\"$version\"")
 }
 
