@@ -15,7 +15,7 @@ fun main() {
     try {
         Static.DISCORD_TOKEN = readFromFile("discord_token.txt")
     } catch (e: FileNotFoundException) {
-        println("File not found: ${e.message}.\nPlease add the file with the corresponding token and try again.\nExiting process...\n")
+        System.err.println("File not found: ${e.message}.\nPlease add the file with the corresponding token and try again.\nExiting process...\n")
         exitProcess(1)
     }
 
