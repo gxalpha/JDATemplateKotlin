@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.0"
-    id("com.github.gmazzo.buildconfig") version "2.0.2"
+    kotlin("jvm")
+    id("com.github.gmazzo.buildconfig")
 }
 val group = "net.sebastianbeckmann"
 val version = "1.0-SNAPSHOT"
@@ -23,9 +23,9 @@ repositories {
 }
 dependencies {
     testImplementation(kotlin("test-junit"))
-    implementation("net.dv8tion:JDA:4.2.1_259")
+    implementation("net.dv8tion:JDA:${findProperty("version.jda")}")
 }
-tasks.withType<KotlinCompile>() {
+tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 val jar by tasks.getting(Jar::class) {
